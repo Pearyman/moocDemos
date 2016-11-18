@@ -1,18 +1,48 @@
-# http://www.gnu.org/software/automake
+gen/
+*.class
+.DS_Store
+*/.DS_Store
 
-Makefile.in
+# Package Files #
+*.jar
+*.war
+*.ear
+#Eclipse Files#
+*.pydevproject
+.project
+.metadata
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
 
-# http://www.gnu.org/software/autoconf
+# External tool builders
+.externalToolBuilders/
 
-/autom4te.cache
-/autoscan.log
-/autoscan-*.log
-/aclocal.m4
-/compile
-/config.h.in
-/configure
-/configure.scan
-/depcomp
-/install-sh
-/missing
-/stamp-h1
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpath
+
+#Idea Files#
+*.iml
+*.ipr
+*.iws
+.idea/
+
+#npm grunt
+node_modules/
+*/node_modules/
+npm-debug.log
+dest/
+deploy/
