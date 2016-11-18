@@ -1,3 +1,4 @@
+//由于class是关键字 所以这里是klass
 var klass = require('./class');
 
 
