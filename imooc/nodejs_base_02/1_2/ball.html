@@ -16,7 +16,7 @@
 	<div class="ball ball1" style="margin-left:0px"></div>
 	<div class="ball ball2" style="margin-left:0px"></div>
 	<div class="ball ball3" style="margin-left:0px"></div>
-
+<script src="./../../node_modules/bluebird/js/browser/bluebird.min.js"></script>
 <script>
 	var ball1=document.querySelector('.ball1');
 	var ball2=document.querySelector('.ball2');
@@ -39,19 +39,59 @@
 		}, 13)
 	}
 
-	animate(ball1,100, function(){
-		animate(ball2,200,function(){
-			animate(ball3,300,function(){
-				animate(ball3,150,function(){
-					animate(ball2,150,function(){
-						animate(ball1,150,function(){
+	var Promise=window.Promise;
 
-						})
-					})
-				})
-			})
+	function promiseAnimate(ball,distance){
+		return new Promise(function(resolve,reject){
+			function _animate(){
+				setTimeout(function(){
+					var marginLeft=parseInt(ball.style.marginLeft,10);
+					if(marginLeft===distance){
+						resolve();
+					}else{
+						if(marginLeft<distance){
+							marginLeft=marginLeft+1+'px';
+						}else{
+							marginLeft=marginLeft-1+'px';
+						}
+						ball.style.marginLeft=marginLeft;
+						_animate(ball, distance);
+					}
+				}, 13);
+			}
+			_animate();
 		})
-	})
+	}
+
+	promiseAnimate(ball1,100)
+		.then(function(){
+			return promiseAnimate(ball2,200);
+		})
+		.then(function(){
+			return promiseAnimate(ball3,300);
+		})
+		.then(function(){
+			return promiseAnimate(ball3,150);
+		})
+		.then(function(){
+			return promiseAnimate(ball2,150);
+		})
+		.then(function(){
+			return promiseAnimate(ball1,150);
+		})
+	// animate(ball1,100, function(){
+	// 	animate(ball2,200,function(){
+	// 		animate(ball3,300,function(){
+	// 			animate(ball3,150,function(){
+	// 				animate(ball2,150,function(){
+	// 					animate(ball1,150,function(){
+	//
+	// 					})
+	// 				})
+	// 			})
+	// 		})
+	// 	})
+	// })
 </script>
 </body>
 </html>
