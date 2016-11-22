@@ -11,6 +11,9 @@
   "dependencies": {
     "bluebird": "^3.4.6",
     "cheerio": "^0.22.0",
-    "promise": "^7.1.1"
+    "promise": "^7.1.1",
+    "request": "^2.79.0",
+    "stream": "0.0.2",
+    "util": "^0.10.3"
   }
 }
