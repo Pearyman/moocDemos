@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>2_1</title>
+	<style>
+#container{background: #ddd; width: 500px; height: 250px;}
+	</style>
+</head>
+<body>
+		<div id="container"></div>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script type="text/javascript">
+//svg
+d3.select('#container')
+	.append('svg')
+	.attr('width',500)
+	.attr('height',250)
+
+
+d3.select('svg')
+	.append('g')
+	.attr('transform','translate(50,30)')
+</script>
+</body>
+</html>
