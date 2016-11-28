@@ -8,6 +8,12 @@
 	<style>
 #container{background: #ddd; width: 500px; height: 250px;}
 path{fill:none; stroke:#000; stroke-width:2px;}
+.y-title{fill:#000;}
+.domain,
+.tick line{
+	stroke:red;
+	stroke-width:1;
+}
 	</style>
 </head>
 <body>
@@ -65,6 +71,12 @@ g.append('g')
 
 g.append('g')
 .call(y_axis)
+.append('text')
+.text('Price($)')
+.attr('transform','rotate(-90)')
+.attr('class','y-title')
+.attr('text-anchor','end')
+.attr('dy','2em')
 
 
 </script>
