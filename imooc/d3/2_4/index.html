@@ -38,7 +38,7 @@ var scale_x= d3.scaleLinear()     // v4修改方法
 
 var scale_y= d3.scaleLinear()    // v4修改方法
 .domain([0,d3.max(data)])
-.range([0,g_height])
+.range([g_height,0])
 
 
 
@@ -51,6 +51,20 @@ var line_generator=d3.line()     // v4修改方法
 d3.select('g')
 .append('path')
 .attr('d',line_generator(data))
+
+
+// x
+var x_axis= d3.axisBottom(scale_x);  // v4修改方法
+var y_axis= d3.axisLeft(scale_y);
+
+g.append('g')
+.call(x_axis)
+.attr('transform','translate(0,'+g_height+')')
+
+// y
+
+g.append('g')
+.call(y_axis)
 </script>
 </body>
 </html>
