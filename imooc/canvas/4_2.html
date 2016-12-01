@@ -5,38 +5,40 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
+	<style media="screen">
+		canvas{border:1px solid #ddd;}
+	</style>
 </head>
 <body>
 <canvas id="canvas" width="800" height="800"></canvas>
 <script type="text/javascript">
 	var canvas=document.getElementById('canvas');
 	var context=canvas.getContext('2d');
-	context.fillStyle='#000';
-	context.fillRect(0,0,800,800);
-for(var i=0; i<200; i++){
-	var r=Math.random()*10+10;
-	var x=Math.random()*800;
-	var y=Math.random()*800;
-	var a =Math.random()*360;
-	drawStar(context, x, y, r, r/2.0,a);
-}
-	function drawStar(cxt,x,y,R,r,rot){
-		cxt.beginPath();
-		for(var i=0; i<5; i++){
-			cxt.lineTo(Math.cos((18+i*72-rot)/180*Math.PI)*R+x,
-										 -Math.sin((18+i*72-rot)/180*Math.PI)*R+y);
-		 	cxt.lineTo(Math.cos((54+i*72-rot)/180*Math.PI)*r+x,
-										 -Math.sin((54+i*72-rot)/180*Math.PI)*r+y);
-		}
-		cxt.fillStyle='#f63';
-		cxt.strokeStyle='#fd5';
-		cxt.lineWidth=3;
-		cxt.lintJoin='round';
-		cxt.closePath();
-		cxt.fill();
-		cxt.stroke();
+	context.fillStyle='skyblue';
+	context.translate(100,100);
+	// context.rotate(20*Math.PI/180);
+	// context.scale(0.5,0.5);
+	context.fillRect(0,0,400,400);
+	context.translate(-100,-100);    // 逆转
 
-	}
+	context.fillStyle='green';
+	context.translate(300,300);
+	context.fillRect(0,0,400,400);   // translate是叠加的  这里应该注意
+
+	context.translate(-300,-300);
+
+	// starPath(context);
+	//
+	// function starPath(cxt){
+	// 	cxt.beginPath();
+	// 	for(var i=0; i<5; i++){
+	// 		cxt.lineTo(Math.cos((18+i*72)/180*Math.PI),
+	// 									 -Math.sin((18+i*72)/180*Math.PI));
+	// 	 	cxt.lineTo(Math.cos((54+i*72)/180*Math.PI)*0.5,
+	// 									 -Math.sin((54+i*72)/180*Math.PI)*0.5);
+	// 	}
+	// 	cxt.closePath();
+	// }
 </script>
 </body>
 </html>
