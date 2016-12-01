@@ -12,7 +12,9 @@
 	var canvas=document.getElementById('canvas');
 	var context=canvas.getContext('2d');
 
-	drawRect2(context,100,100,400,400,10,'#058','red')
+	drawRect(context,100,100,400,400,10,'#058','rgba(100,100,100,0.8)');   //多种颜色方式
+	drawRect2(context,300,300,400,400,10,'#058','hsl(20,63%,0.8)');
+
 	function drawRect(cxt,x,y,width,height,borderWidth,borderColor,fillColor){
 		cxt.beginPath();
 		cxt.rect(x,y,width,height);
@@ -27,7 +29,7 @@
 	}
 
 	function drawRect2(cxt,x,y,width,height,borderWidth,borderColor,fillColor){
-		// fillRect  以及 strokeRect 是很好用的  
+		// fillRect  以及 strokeRect 是很好用的
 		cxt.lineWidth=borderWidth;
 		cxt.fillStyle=fillColor;
 		cxt.strokeStyle=borderColor;
