@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="canvas" width="800" height="800"></canvas>
+<script type="text/javascript">
+	var canvas=document.getElementById('canvas');
+	var context=canvas.getContext('2d');
+	// context.moveTo(100,350);
+	// context.lineTo(500,350);
+	// context.lineTo(500,200);
+	//
+	// context.lineTo(700,400);
+	// context.lineTo(500,600);
+	// context.lineTo(500,450);
+	// context.lineTo(100,450);     这里是一个箭头
+	//
+	//
+	//
+	//
+	context.beginPath();
+	context.moveTo(100,200);
+	context.lineTo(300,400);
+	context.lineTo(100,600);
+	context.strokeStyle="red";
+	context.lineWidth=10;
+	context.stroke();
+
+  context.beginPath();
+	context.moveTo(300,200);
+	context.lineTo(500,400);
+	context.lineTo(300,600);
+	context.strokeStyle="blue";
+	context.lineWidth=10;
+	context.stroke();
+
+  context.beginPath();
+	context.moveTo(500,200);
+	context.lineTo(700,400);
+	context.lineTo(500,600);       //三个箭头
+	context.lineWidth=10;
+	context.strokeStyle="yellow";
+	context.stroke();
+</script>
+</body>
+</html>
