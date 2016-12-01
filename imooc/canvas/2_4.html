@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="canvas" width="800" height="800"></canvas>
+<script type="text/javascript">
+	var canvas=document.getElementById('canvas');
+	var context=canvas.getContext('2d');
+	// context.beginPath();
+	// context.moveTo(100,350);
+	// context.lineTo(500,350);
+	// context.lineTo(500,200);
+	// context.lineTo(700,400);
+	// context.lineTo(500,600);
+	// context.lineTo(500,450);
+	// context.lineTo(100,450);     //这里是一个箭头
+	// // context.lineTo(100,350);
+	// context.closePath();
+	//
+	// context.lineWidth=10;
+	// context.fillStyle="#058";
+	// context.strokeStyle="yellow";
+	//
+	// context.fill();
+	// context.stroke();
+
+	drawRect(context,100,100,400,400,10,'#058','red')
+	function drawRect(cxt,x,y,width,height,borderWidth,borderColor,fillColor){
+		cxt.beginPath();
+		cxt.moveTo(x,y);
+		cxt.lineTo(x+width,y);
+		cxt.lineTo(x+width,y+height);
+		cxt.lineTo(x,y+height);
+		cxt.closePath();
+
+		cxt.lineWidth=borderWidth;
+		cxt.fillStyle=fillColor;
+		cxt.strokeStyle=borderColor;
+
+		cxt.fill();
+		cxt.stroke();
+	}
+</script>
+</body>
+</html>

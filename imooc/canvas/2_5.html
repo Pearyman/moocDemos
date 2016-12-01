@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="canvas" width="800" height="800"></canvas>
+<script type="text/javascript">
+	var canvas=document.getElementById('canvas');
+	var context=canvas.getContext('2d');
+
+	drawRect2(context,100,100,400,400,10,'#058','red')
+	function drawRect(cxt,x,y,width,height,borderWidth,borderColor,fillColor){
+		cxt.beginPath();
+		cxt.rect(x,y,width,height);
+		cxt.closePath();
+
+		cxt.lineWidth=borderWidth;
+		cxt.fillStyle=fillColor;
+		cxt.strokeStyle=borderColor;
+
+		cxt.fill();
+		cxt.stroke();
+	}
+
+	function drawRect2(cxt,x,y,width,height,borderWidth,borderColor,fillColor){
+		// fillRect  以及 strokeRect 是很好用的  
+		cxt.lineWidth=borderWidth;
+		cxt.fillStyle=fillColor;
+		cxt.strokeStyle=borderColor;
+
+		cxt.fillRect(x,y,width,height);
+		cxt.strokeRect(x,y,width,height);
+	}
+</script>
+</body>
+</html>
