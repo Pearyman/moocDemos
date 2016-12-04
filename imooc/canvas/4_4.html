@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>变换矩阵</title>
+	<style>
+		canvas{border:1px solid #ddd; }
+	</style>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="800"></canvas>
+<script type="text/javascript">
+	var canvas=document.getElementById('canvas');
+	var context=canvas.getContext('2d');
+
+  context.fillStyle='red';
+	context.strokeStyle='#058';
+	context.lineWidth=5;
+
+	context.save();
+	context.transform(1,0,0,0,1,0);
+	context.setTransform(2,-0.2,-0.2,1.5,50,100);   // 变换矩阵 a b c d e f 是在之前的基础上 会产生级联的效果
+
+	context.fillRect(50,50,300,300);
+	context.strokeRect(50,50,300,300);
+	context.restore();
+</script>
+</body>
+</html>
