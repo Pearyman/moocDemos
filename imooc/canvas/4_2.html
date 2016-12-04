@@ -14,18 +14,24 @@
 <script type="text/javascript">
 	var canvas=document.getElementById('canvas');
 	var context=canvas.getContext('2d');
+
+	context.save();
+
 	context.fillStyle='skyblue';
 	context.translate(100,100);
 	// context.rotate(20*Math.PI/180);
 	// context.scale(0.5,0.5);
 	context.fillRect(0,0,400,400);
-	context.translate(-100,-100);    // 逆转
+	context.restore();               // 与save成对出现
 
+	// context.translate(-100,-100);    // 逆转
+
+ 	context.save();
 	context.fillStyle='green';
 	context.translate(300,300);
 	context.fillRect(0,0,400,400);   // translate是叠加的  这里应该注意
-
-	context.translate(-300,-300);
+	context.restore(); 
+	// context.translate(-300,-300);
 
 	// starPath(context);
 	//
