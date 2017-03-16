@@ -7,4 +7,16 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
+
+  <svg class="icon">
+     <use xlink:href="http://ac-a5zjlnxg.clouddn.com/691e7c2b31a214432255.svg" class="c1"/>
+  </svg>
+  <view class="iconfront">
+
+  </view>
+ 
+
+  <svg class="icon">
+       <use xlink:href="http://ac-a5zjlnxg.clouddn.com/691e7c2b31a214432255.svg" class="c1"/>
+    </svg>
 </view>
