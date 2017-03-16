@@ -6,10 +6,14 @@ if (!process.env.NODE_ENV) {
 }
 
 var opn = require('opn')
+// 提供文件路径的方法
 var path = require('path')
 var express = require('express')
+
 var webpack = require('webpack')
+// http代理中间件
 var proxyMiddleware = require('http-proxy-middleware')
+// 依赖开发配置
 var webpackConfig = require('./webpack.dev.conf')
 
 // default port where dev server listens for incoming traffic

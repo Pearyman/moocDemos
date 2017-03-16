@@ -1,12 +1,14 @@
 var utils = require('./utils')
 var webpack = require('webpack')
 var config = require('../config')
+// 合并配置文件
 var merge = require('webpack-merge')
+// 开发和运行时的配置文件共享
 var baseWebpackConfig = require('./webpack.base.conf')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 
-// add hot-reload related code to entry chunks
+// add hot-reload related code to entry chunks  启动一些热加载的代码
 Object.keys(baseWebpackConfig.entry).forEach(function (name) {
   baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
 })
