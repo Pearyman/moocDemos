@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <first-header></first-header>
+    <firstheader></firstheader>
     <div class="tab">
-      tab区块
+      <div class="tab-item">商品</div>
+      <div class="tab-item">评论</div>
+      <div class="tab-item">商家</div>
     </div>
     <div class="content">
       content区块
@@ -12,13 +14,14 @@
 
 <script>
 import firstheader from './components/header/header'
+
 export default {
-  components: {
-    'first-header': firstheader
-  }
+  components: { firstheader }
 }
 </script>
 
 <style>
-
+  .tab-item{
+    display: inline-block;
+  }
 </style>

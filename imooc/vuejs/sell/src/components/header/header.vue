@@ -1,8 +1,12 @@
 <template>
-  <div>
+  <div class="header">
     我是header
   </div>
 </template>
 <script type="text/ecmascript-6">
-  export {}
+  export default {
+  }
 </script>
+<style>
+.header{color: red;}
+</style>
