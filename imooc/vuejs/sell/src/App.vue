@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <div class="header">
-      header区块
-    </div>
+    <first-header></first-header>
     <div class="tab">
       tab区块
     </div>
@@ -13,13 +11,14 @@
 </template>
 
 <script>
+import firstheader from './components/header/header'
 export default {
-
+  components: {
+    'first-header': firstheader
+  }
 }
 </script>
 
 <style>
-#app {
 
-}
 </style>
