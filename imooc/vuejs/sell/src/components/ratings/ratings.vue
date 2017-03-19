@@ -1,5 +1,7 @@
 <template lang="html">
-
+	<div class="">
+	 i am ratings
+	</div>
 </template>
 
 <script>

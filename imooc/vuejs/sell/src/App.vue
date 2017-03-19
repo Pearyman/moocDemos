@@ -3,19 +3,16 @@
     <firstheader></firstheader>
     <div class="tab">
       <div class="tab-item">
-        <a v-link="{path:'/goods'}">商品</a>
+        <router-link to="/goods">商品</router-link>
       </div>
       <div class="tab-item">
-        <a v-link="{path:'/ratings'}">商品</a>
+        <router-link to="/ratings">评价</router-link>
       </div>
       <div class="tab-item">
-        <a v-link="{path:'/seller'}">商家</a>
+        <router-link to="/seller">商家</router-link>
       </div>
-
     </div>
-    <div class="content">
-      content区块
-    </div>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -37,6 +34,13 @@ export default {
   .tab-item{
     flex: 1;
     text-align: center;
-
+  }
+  .tab-item >a {
+    display: block;
+    font-size: 14px;
+    color: rgb(77,85,93);
+  }
+  .tab-item >a.router-link-active{
+    color: rgb(240,20,20);
   }
 </style>
