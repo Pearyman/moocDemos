@@ -21,7 +21,15 @@ export default {
 </script>
 
 <style>
+  .tab{
+    display: flex;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+  }
   .tab-item{
-    display: inline-block;
+    flex: 1;
+    text-align: center;
+    
   }
 </style>
