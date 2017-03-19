@@ -1,15 +1,25 @@
-// import Vue from 'vue'
+import Vue from 'vue'
 import Router from 'vue-router'
-// import app_header from '@/components/header/header.vue'
+// import appheader from '@/components/header/header'
+import goods from '@/components/goods/goods'
+import ratings from '@/components/ratings/ratings'
+import seller from '@/components/seller/seller'
 //
 Vue.use(Router)
 //
-// export default new Router({
-//   routes: [
-//     {
-//       path: '/',
-//       name: 'header',
-//       component: app_header
-//     }
-//   ]
-// })
+export default new Router({
+  routes: [
+    {
+      path: '/goods',
+      component: goods
+    },
+    {
+      path: '/ratings',
+      component: ratings
+    },
+    {
+      path: '/seller',
+      component: seller
+    }
+  ]
+})
