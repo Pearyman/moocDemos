@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <firstheader></firstheader>
-    <div class="tab">
+    <div class="tab border-1px">
       <div class="tab-item">
         <router-link to="/goods">商品</router-link>
       </div>
@@ -25,11 +25,14 @@ export default {
 </script>
 
 <style>
+ /*@import "common/less/mixin.less"*/
   .tab{
     display: flex;
     width: 100%;
     height: 40px;
     line-height: 40px;
+    /*border-onepx(rgba(7,17,27,0.1))*/
+    border-bottom: 1px solid rgba(7,17,27,0.1);
   }
   .tab-item{
     flex: 1;
