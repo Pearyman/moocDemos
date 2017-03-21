@@ -1,3 +1,4 @@
+
 <style lang="stylus" rel="stylesheet/stylus">
 
 @import 'common/stylus/index';
@@ -21,7 +22,6 @@
         color: rgb(240,20,20)
 
 </style>
-
 <template>
   <div id="app">
     <firstheader :seller="seller"></firstheader>
