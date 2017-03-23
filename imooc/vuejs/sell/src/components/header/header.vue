@@ -43,9 +43,7 @@
 </template>
 <script type="text/ecmascript-6">
 
-  // import star from '../star/star'
   import star from 'components/star/star'
-  // console.log(star)
   export default {
     props: {
       seller: {
